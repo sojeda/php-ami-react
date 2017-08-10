@@ -67,6 +67,19 @@ class ActionSender
         return $this->request('SIPPeers');
     }
 
+    public function originate($channel, $context, $exten)
+    {
+        return $this->request(
+            'Originate', 
+            array(
+                'Channel' => $channel, 
+                'Context' => $context, 
+                'Exten' => $exten, 
+                'Async' => 'True'
+            )
+        );
+    }
+
     public function sipShowPeer($peerName)
     {
         return $this->request('SIPshowpeer', array('Peer' => $peerName));
