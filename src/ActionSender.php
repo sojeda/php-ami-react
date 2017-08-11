@@ -70,12 +70,12 @@ class ActionSender
     public function originate($channel, $context, $exten)
     {
         return $this->request(
-            'Originate', 
+            'Originate',
             array(
-                'Channel' => $channel, 
-                'Context' => $context, 
-                'Exten' => $exten, 
-                'Async' => 'True'
+                'Channel' => "$channel",
+                'Context' => "$context",
+                'Exten' => "$exten",
+                'Async' => "true"
             )
         );
     }
